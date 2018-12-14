@@ -1,0 +1,17 @@
+<h1>Posts</h1>
+    {{!-- {{#each posts}}
+        <hr>
+        <h2><a href="/posts/{{this._id}}">{{this.charityName}}</a></h2>
+        <h4>{{this.name}}</h4>
+        <h3>{{this.amountGiven}}</h3>
+    {{/each}} --}}
+<div class="card">
+  <div class="card-body">
+    {{#each posts}}
+    <h5 class="card-title"><a href="/posts/{{this._id}}">{{this.charityName}}</a></h2></h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{this.name}}</h6>
+    <p class="card-text">{{this.amountGiven}}</p>
+    <br>    {{/each}}
+  </div>
+ 
+</div>

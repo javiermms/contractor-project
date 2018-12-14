@@ -1,0 +1,30 @@
+<form method="POST" action="/posts/comments">
+    <input type="hidden" value="{{post._id}}" name="postId">
+  <fieldset>
+    <legend>Add Comment</legend>
+    <!-- NAME -->
+    <div class="form-group">
+      <label for="comment-title">Name</label><br>
+      <input class="form-control"
+        id="comment-title"
+        type="text"
+        name="name"
+        placeholder="Name"/>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="form-group">
+      <label for="comment-description">Description</label><br>
+      <textarea class="form-control"
+      id="comment-content"
+      name="description"
+      rows="10"
+      placeholder="Your comment..."/></textarea>
+    </div>
+  </fieldset>
+
+  <!-- BUTTON -->
+   <div class="container-fluid" style="float: right;">
+    <button class="btn btn-primary" type="submit">Save</button>
+  </div>
+</form>

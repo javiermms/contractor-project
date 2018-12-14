@@ -1,0 +1,47 @@
+<a href="/">Back to Home</a>
+
+<div class="row">
+
+  <div class="col-sm-4 col-sm-offset-3">
+    <h1>{{post.charityName}}</h1>
+    <h3>{{post.name}}</h2>
+    <h2>{{post.amountGiven}}</p>
+    <p>{{post.description}}</p>
+
+  <div class="centered">
+    <div style="float: left">
+      <form method="GET" action="/posts/{{post._id}}/edit">
+        <button type="submit" class="btn btn-primary">Edit</button>
+      </form>
+    </div>
+     <div style="">
+      <form method="POST" action="/posts/{{post._id}}?_method=DELETE">
+        <button type="submit" class="btn btn-primary">Delete</button>
+      </form>
+     </div>
+  </div>
+      
+    <hr>
+
+  {{#each comments}}
+  
+    {{> comment}}
+    <div class="centered">
+        <div>
+          <form method="POST" action="/posts/comments/{{post._id}}?_method=DELETE">
+           <button type="submit" class="btn btn-primary">Delete</button>
+          </form>
+        </div>
+    </div>
+    
+    <hr>
+
+  {{/each}}
+    </div>
+
+  <!-- COMMENT FORM -->
+    <div class="col-sm-4">
+    
+    {{> comment-form}}
+    </div>
+</div>
